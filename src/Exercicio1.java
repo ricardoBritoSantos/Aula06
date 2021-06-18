@@ -13,7 +13,7 @@ public class Exercicio1 {
 		
 		for (int i = 0; i < atividade.length; i++) {
 			System.out.println("Digite a " + (i+1) + "º atividades do dia");
-			atividade[i] = scanner.next();
+			atividade[i] = scanner.nextLine();
 		}
 		
 		System.out.println("Você deseja exibir as atividade em ordem?");
