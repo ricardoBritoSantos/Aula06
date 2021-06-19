@@ -23,6 +23,7 @@ public class Exercicio4 {
 		String[] vetCarrinhoNomes = new String[3];
 		String produto = null;
 		int menu = 0, totalItens = 0;
+		boolean cheio = false;
 		
 		while (menu < 7) {
 			System.out.println("Escolha a opção desejada:\n");
@@ -37,15 +38,17 @@ public class Exercicio4 {
 			menu = scanner.nextInt();
 			
 			if (menu == 1) {
-				for (int i = 0; i < vetCarrinhoNomes.length; i++) {
-					System.out.println("Informar o nome do produto");
-					vetCarrinhoNomes[i] = scanner.nextLine();
-					System.out.println("Informar o preço do produto");
-					vetCarrinhoValores[i] = scanner.nextDouble();
-					scanner.nextLine();
-				} 
-				
+				if (!cheio) {
+					for (int i = 0; i < vetCarrinhoNomes.length; i++) {
+						scanner.nextLine();
+						System.out.println("Informar o nome do produto");
+						vetCarrinhoNomes[i] = scanner.nextLine();
+						System.out.println("Informar o preço do produto");
+						vetCarrinhoValores[i] = scanner.nextDouble();
+					} 
+				}
 				System.out.println("Carrinho Cheio\n");
+				cheio = true;
 			}
 			
 			if(menu == 2) {
@@ -103,9 +106,5 @@ public class Exercicio4 {
 			
 		}
 
-	}
-
-	public static void limpaClear() {
-		System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); 
 	}
 }
