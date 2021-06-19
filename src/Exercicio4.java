@@ -103,8 +103,7 @@ public class Exercicio4 {
 					System.out.println(vetCarrinhoNomes[i] + " R$ " + vetCarrinhoValores[i]);
 				}
 			}
-			
 		}
-
+		scanner.close();
 	}
 }
