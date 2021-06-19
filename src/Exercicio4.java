@@ -22,7 +22,7 @@ public class Exercicio4 {
 		double[] vetCarrinhoValores = new double[3];
 		String[] vetCarrinhoNomes = new String[3];
 		String produto = null;
-		int menu = 0, totalItens = 0;
+		int menu = 0, totalItens = 0, posicao = 0;
 		boolean cheio = false;
 		
 		while (menu < 7) {
@@ -39,16 +39,18 @@ public class Exercicio4 {
 			
 			if (menu == 1) {
 				if (!cheio) {
-					for (int i = 0; i < vetCarrinhoNomes.length; i++) {
-						scanner.nextLine();
-						System.out.println("Informar o nome do produto");
-						vetCarrinhoNomes[i] = scanner.nextLine();
-						System.out.println("Informar o preço do produto");
-						vetCarrinhoValores[i] = scanner.nextDouble();
-					} 
+					scanner.nextLine();
+					System.out.println("Informar o nome do produto");
+					vetCarrinhoNomes[posicao] = scanner.nextLine();
+					System.out.println("Informar o preço do produto");
+					vetCarrinhoValores[posicao] = scanner.nextDouble();
+					posicao++; 
 				}
-				System.out.println("Carrinho Cheio\n");
-				cheio = true;
+				
+				if (posicao >= vetCarrinhoNomes.length) {
+					System.out.println("Carrinho Cheio\n");
+					cheio = true;
+				}
 			}
 			
 			if(menu == 2) {
